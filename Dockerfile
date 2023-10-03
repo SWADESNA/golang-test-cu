@@ -2,7 +2,7 @@ FROM golang:1.21.1-bookworm AS build
 
 # RUN apt-get update && apt-get install -y ca-certificates git-core ssh
 # RUN git config --global --add url."https://${GITHUB_TOKEN}:@github.com/alexliesenfeld".insteadOf "https://github.com/alexliesenfeld"
-RUN go install github.com/sqlc-dev/sqlc/cmd/sqlc@v1.22.0
+RUN go get github.com/sqlc-dev/sqlc/cmd/sqlc@v1.22.0
 RUN go install golang.org/x/tools/cmd/goimports@v0.13.0
 
 # ENV GOPRIVATE=github.com/alexliesenfeld/*
